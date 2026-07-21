@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AI Native Startup Playbook：四大核心價值、創新創業12階段、AI工具地圖、MRR成長5階段與企業AI導入框架。" />
+  <meta name="theme-color" content="#071225" />
+  <title>AI Native Startup Playbook｜從創意到 $100K MRR</title>
+  <style>
+    :root{
+      --bg:#071225;--panel:#0d1d36;--panel2:#102746;--line:#1f456d;
+      --text:#edf6ff;--muted:#9eb5ca;--cyan:#34d5ff;--blue:#3d8bff;
+      --orange:#ff8a3d;--green:#4ee0a1;--purple:#a778ff;--yellow:#ffd35a;
+      --shadow:0 18px 60px rgba(0,0,0,.28);--radius:22px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,"Noto Sans TC","Microsoft JhengHei",sans-serif;background:
+      radial-gradient(circle at 50% -10%,rgba(52,213,255,.18),transparent 30%),
+      linear-gradient(180deg,#061020,#08172b 55%,#071225);color:var(--text);line-height:1.65}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    .container{width:min(1180px,calc(100% - 32px));margin:auto}
+    .nav{position:sticky;top:0;z-index:30;background:rgba(6,16,32,.82);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.08)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+    .brand{font-weight:900;letter-spacing:.04em}.brand span{color:var(--cyan)}
+    .nav-links{display:flex;gap:14px;flex-wrap:wrap}
+    .nav-links a{font-size:.9rem;color:var(--muted);padding:8px 10px;border-radius:999px}
+    .nav-links a:hover,.nav-links a.active{color:white;background:rgba(52,213,255,.12)}
+    .hero{padding:74px 0 56px;text-align:center}
+    .eyebrow{display:inline-flex;gap:8px;align-items:center;border:1px solid rgba(52,213,255,.35);
+      background:rgba(52,213,255,.08);padding:7px 12px;border-radius:999px;color:var(--cyan);font-size:.86rem}
+    h1{font-size:clamp(2.25rem,6vw,5.4rem);line-height:1.02;margin:20px auto 18px;max-width:1050px;letter-spacing:-.04em}
+    .gradient{background:linear-gradient(90deg,#fff,var(--cyan),#6ea4ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero p{max-width:800px;margin:0 auto;color:var(--muted);font-size:1.08rem}
+    .hero-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .btn{border:1px solid rgba(255,255,255,.12);background:var(--panel2);color:white;padding:11px 16px;border-radius:14px;cursor:pointer}
+    .btn.primary{background:linear-gradient(135deg,var(--blue),var(--cyan));color:#03101f;border:0;font-weight:800}
+    .btn:hover{transform:translateY(-1px)}
+    section{padding:62px 0;scroll-margin-top:76px}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:24px}
+    .section-head h2{font-size:clamp(1.6rem,3vw,2.6rem);margin:0}
+    .section-head p{max-width:620px;margin:0;color:var(--muted)}
+    .grid{display:grid;gap:18px}
+    .values{grid-template-columns:repeat(4,1fr)}
+    .card{background:linear-gradient(180deg,rgba(16,39,70,.92),rgba(9,27,50,.92));border:1px solid rgba(91,177,255,.2);
+      border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+    .card:before{content:"";position:absolute;inset:0 0 auto;height:2px;background:linear-gradient(90deg,transparent,var(--accent,var(--cyan)),transparent)}
+    .icon{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:rgba(255,255,255,.07);font-size:1.45rem}
+    .card h3{margin:14px 0 6px}.card p{margin:0;color:var(--muted)}
+    .stages-wrap{display:grid;grid-template-columns:320px 1fr;gap:22px}
+    .stage-list{display:flex;flex-direction:column;gap:10px}
+    .stage-btn{width:100%;text-align:left;background:rgba(255,255,255,.035);color:var(--muted);border:1px solid rgba(255,255,255,.08);
+      border-radius:14px;padding:13px 14px;cursor:pointer;display:flex;gap:12px;align-items:center}
+    .stage-btn strong{display:grid;place-items:center;min-width:34px;height:34px;border-radius:10px;background:rgba(52,213,255,.1);color:var(--cyan)}
+    .stage-btn.active{color:white;border-color:rgba(52,213,255,.5);background:rgba(52,213,255,.1)}
+    .detail-panel{min-height:525px}
+    .detail-top{display:flex;justify-content:space-between;gap:16px;align-items:start}
+    .badge{display:inline-flex;padding:5px 10px;border-radius:999px;background:rgba(52,213,255,.11);color:var(--cyan);font-size:.82rem}
+    .detail-panel h3{font-size:1.7rem;margin:12px 0 6px}
+    .detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:22px}
+    .mini{border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.025);border-radius:16px;padding:16px}
+    .mini h4{margin:0 0 10px}.mini ul{margin:0;padding-left:20px;color:var(--muted)}
+    .tool-filter{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+    .chip{border:1px solid rgba(255,255,255,.1);background:transparent;color:var(--muted);padding:8px 12px;border-radius:999px;cursor:pointer}
+    .chip.active{color:#02111e;background:var(--cyan);border-color:var(--cyan)}
+    .tool-grid{grid-template-columns:repeat(5,1fr)}
+    .tool-card{min-height:150px}.tool-card .category{font-size:.78rem;color:var(--accent);text-transform:uppercase;letter-spacing:.09em}
+    .tool-card ul{padding-left:18px;margin:10px 0 0;color:var(--muted)}
+    .growth{grid-template-columns:repeat(5,1fr);align-items:stretch}
+    .growth-card{cursor:pointer;transition:.2s}
+    .growth-card:hover,.growth-card.active{transform:translateY(-4px);border-color:rgba(255,138,61,.55)}
+    .growth-card .range{font-weight:900;color:var(--orange);font-size:1.22rem}
+    .progress{height:8px;background:rgba(255,255,255,.07);border-radius:999px;margin:16px 0;overflow:hidden}
+    .progress span{display:block;height:100%;width:var(--w);background:linear-gradient(90deg,var(--orange),var(--yellow))}
+    .framework{display:grid;grid-template-columns:1fr 60px 1fr;gap:14px;align-items:stretch}
+    .framework-col{display:grid;gap:12px}
+    .framework-node{border:1px solid rgba(255,255,255,.1);border-radius:15px;padding:15px;background:rgba(255,255,255,.03)}
+    .framework-node strong{display:block}.framework-node span{color:var(--muted);font-size:.9rem}
+    .arrows{display:flex;flex-direction:column;justify-content:space-around;align-items:center;color:var(--cyan);font-size:1.6rem}
+    .callout{margin-top:24px;padding:20px;border-radius:18px;border:1px solid rgba(78,224,161,.28);background:rgba(78,224,161,.07)}
+    .footer{border-top:1px solid rgba(255,255,255,.08);padding:32px 0;color:var(--muted);text-align:center}
+    .modal{position:fixed;inset:0;background:rgba(1,7,16,.82);display:none;align-items:center;justify-content:center;padding:20px;z-index:50}
+    .modal.open{display:flex}.modal-card{width:min(640px,100%);max-height:85vh;overflow:auto}
+    .close{float:right}
+    @media(max-width:980px){
+      .values,.tool-grid{grid-template-columns:repeat(2,1fr)}
+      .growth{grid-template-columns:repeat(2,1fr)}
+      .stages-wrap{grid-template-columns:1fr}.stage-list{display:grid;grid-template-columns:repeat(3,1fr)}
+      .stage-btn span{display:none}.detail-panel{min-height:auto}
+    }
+    @media(max-width:700px){
+      .nav-links{display:none}.values,.tool-grid,.growth,.detail-grid{grid-template-columns:1fr}
+      .stage-list{grid-template-columns:repeat(2,1fr)}
+      .framework{grid-template-columns:1fr}.arrows{flex-direction:row}.arrows span{transform:rotate(90deg)}
+      h1{font-size:2.6rem}.section-head{display:block}.section-head p{margin-top:8px}
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top">AI <span>NATIVE</span> PLAYBOOK</a>
+      <div class="nav-links">
+        <a href="#values">核心價值</a><a href="#stages">12階段</a><a href="#tools">工具地圖</a>
+        <a href="#growth">成長路徑</a><a href="#framework">企業框架</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="container">
+      <span class="eyebrow">AI as Your Startup Operating System</span>
+      <h1>從創意到 <span class="gradient">$100K MRR</span><br>AI 原生創業作戰圖</h1>
+      <p>整合市場研究、產品設計、MVP、驗證、行銷、銷售、營運與企業級 AI 治理，將零散工具升級為可複製、可擴張的商業作業系統。</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#stages">探索 12 個階段</a>
+        <a class="btn" href="#tools">查看工具地圖</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="values">
+      <div class="container">
+        <div class="section-head"><div><span class="badge">01｜WHY</span><h2>四大核心價值</h2></div><p>AI 的價值不在「多用幾個工具」，而在重塑速度、決策、風險與規模化能力。</p></div>
+        <div class="grid values">
+          <article class="card" style="--accent:var(--cyan)"><div class="icon">🚀</div><h3>更快執行</h3><p>透過 AI 工作流與代理協作，縮短研究、設計、開發及行銷週期。</p></article>
+          <article class="card" style="--accent:var(--purple)"><div class="icon">🎯</div><h3>更好決策</h3><p>在每個階段運用資料、假設與驗證紀錄，降低拍腦袋式決策。</p></article>
+          <article class="card" style="--accent:var(--orange)"><div class="icon">🛡️</div><h3>降低風險</h3><p>先驗證問題、需求與商業模式，再投入開發、行銷與擴張資源。</p></article>
+          <article class="card" style="--accent:var(--green)"><div class="icon">📈</div><h3>智慧規模化</h3><p>建立可重複的獲客、交付與營運系統，讓成長由系統而非英雄支撐。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="stages">
+      <div class="container">
+        <div class="section-head"><div><span class="badge">02｜HOW</span><h2>創新創業的 12 個階段</h2></div><p>點選任一階段，查看該階段的目標、工作、產出與建議工具。</p></div>
+        <div class="stages-wrap">
+          <div class="stage-list" id="stageList"></div>
+          <article class="card detail-panel" id="stageDetail" aria-live="polite"></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="tools">
+      <div class="container">
+        <div class="section-head"><div><span class="badge">03｜STACK</span><h2>AI Startup 工具地圖</h2></div><p>依功能篩選工具。選型原則是「先明確工作，再選工具」，避免工具堆疊。</p></div>
+        <div class="tool-filter" id="toolFilter"></div>
+        <div class="grid tool-grid" id="toolGrid"></div>
+      </div>
+    </section>
+
+    <section id="growth">
+      <div class="container">
+        <div class="section-head"><div><span class="badge">04｜SCALE</span><h2>公司成長的 5 個階段</h2></div><p>不同收入階段的主要瓶頸不同。點擊卡片查看階段策略。</p></div>
+        <div class="grid growth" id="growthGrid"></div>
+        <div class="callout" id="growthInsight" aria-live="polite">先驗證一個昂貴且持續存在的問題，再談產品與規模。</div>
+      </div>
+    </section>
+
+    <section id="framework">
+      <div class="container">
+        <div class="section-head"><div><span class="badge">05｜ENTERPRISE</span><h2>企業 AI 導入框架</h2></div><p>Startup Playbook 偏重商業應用；企業級落地必須補上資料、治理、評估與可觀測性。</p></div>
+        <div class="framework">
+          <div class="framework-col">
+            <div class="framework-node"><strong>市場與客戶洞察</strong><span>VOC、競品、產業研究、需求優先級</span></div>
+            <div class="framework-node"><strong>產品與服務設計</strong><span>PRD、流程、UI/UX、PoC 與 MVP</span></div>
+            <div class="framework-node"><strong>成長與營收引擎</strong><span>內容、行銷、AI SDR、客戶成功</span></div>
+            <div class="framework-node"><strong>營運與知識管理</strong><span>SOP、自動化、文件、會議與決策紀錄</span></div>
+          </div>
+          <div class="arrows"><span>→</span><span>→</span><span>→</span><span>→</span></div>
+          <div class="framework-col">
+            <div class="framework-node"><strong>Context & Knowledge</strong><span>RAG、企業知識庫、記憶、權限與資料治理</span></div>
+            <div class="framework-node"><strong>Agent Orchestration</strong><span>多代理協作、工作流、MCP、工具與連接器</span></div>
+            <div class="framework-node"><strong>Evaluation & Governance</strong><span>品質評估、資安、法遵、Red Team、人工核准</span></div>
+            <div class="framework-node"><strong>Observability & ROI</strong><span>Tracing、成本、KPI、SROI、回歸測試與持續優化</span></div>
+          </div>
+        </div>
+        <div class="callout"><strong>核心結論：</strong>企業不是導入單一 AI 工具，而是建立「應用層 × 系統工程層 × 治理層」三位一體的 AI Operating System。</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container">Think Big. Build Smart. Use AI. Win.｜AI Native Startup Playbook</div></footer>
+
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <article class="card modal-card">
+      <button class="btn close" id="closeModal" type="button">關閉</button>
+      <div id="modalContent"></div>
+    </article>
+  </div>
+
+<script>
+const stages = [
+ {n:1,title:"找到 $100K 問題",tag:"Problem Discovery",goal:"找到真實、昂貴、持續存在且有人願意付費解決的問題。",
+ tasks:["客戶研究與訪談","市場與競品分析","使用者痛點挖掘","市場規模與定價假設"],
+ outputs:["ICP 與 Persona","Pain Points","Market Size","GTM Hypothesis"],tools:["Claude","ChatGPT","Perplexity","Reddit / X"]},
+ {n:2,title:"PRD 與架構",tag:"Product Definition",goal:"在寫程式前，先把產品需求、資料與技術邊界定義清楚。",
+ tasks:["建立 PRD","User Stories","資料庫與 API 設計","安全、測試與里程碑規劃"],
+ outputs:["PRD","Database Schema","API Spec","Roadmap"],tools:["Claude","ChatGPT","Notion","Obsidian"]},
+ {n:3,title:"UI / UX 設計",tag:"Experience Design",goal:"把需求轉成清楚、可操作且有轉換力的產品體驗。",
+ tasks:["資訊架構","Landing Page","Dashboard","Design System"],
+ outputs:["Wireframe","Prototype","Components","Responsive UI"],tools:["Figma AI","v0","Lovable","Claude"]},
+ {n:4,title:"建立 MVP",tag:"Build",goal:"聚焦一個核心功能，以最短時間完成可測試的產品。",
+ tasks:["前後端開發","登入與權限","付款與郵件","部署與測試"],
+ outputs:["Working MVP","Auth","Payments","Deployment"],tools:["Claude Code","GPT-5","Cursor","Next.js","Supabase","Vercel","Stripe"]},
+ {n:5,title:"QA 與驗證",tag:"Verification",goal:"透過多層審查降低功能、安全與效能風險。",
+ tasks:["Developer Review","Security Review","Performance Test","Human Approval"],
+ outputs:["QA Report","Security Checklist","Bug List","Release Decision"],tools:["Claude","GitHub","Automated Tests","Human Review"]},
+ {n:6,title:"數據分析",tag:"Analytics",goal:"追蹤真正影響產品成長與營收的指標。",
+ tasks:["事件追蹤","漏斗分析","留存與流失分析","功能採用與收入追蹤"],
+ outputs:["Activation","Retention","Churn","Revenue Dashboard"],tools:["PostHog","Mixpanel","Google Analytics","Microsoft Clarity"]},
+ {n:7,title:"內容引擎",tag:"Content Engine",goal:"將一個核心洞見轉化為多平台、多格式內容資產。",
+ tasks:["長文與案例","社群貼文","SEO 與電子報","內容再利用"],
+ outputs:["Blogs","Case Studies","Landing Pages","20+ Content Assets"],tools:["Claude","ChatGPT","Notion","Canva AI"]},
+ {n:8,title:"行銷成長",tag:"Marketing",goal:"建立可持續產出、測試與分發的品牌內容系統。",
+ tasks:["影片與圖像","廣告素材","產品 Demo","社群分發"],
+ outputs:["Videos","Ads","Infographics","Campaign Assets"],tools:["Claude","Midjourney","Canva AI","ElevenLabs","CapCut"]},
+ {n:9,title:"AI SDR 銷售",tag:"Sales",goal:"把找名單、補資料、個人化開發與追蹤形成流水線。",
+ tasks:["Lead Search","Enrichment","Personalized Email","Follow-up 與 Demo Booking"],
+ outputs:["Qualified Leads","Meetings","CRM Updates","Pipeline"],tools:["Apollo","Clay","Instantly","Claude"]},
+ {n:10,title:"客戶成功",tag:"Customer Success",goal:"縮短上手時間、降低流失並提高客戶終身價值。",
+ tasks:["Onboarding","Help Center","Chatbot","Bug 與需求分流"],
+ outputs:["Knowledge Base","Support Flow","Feature Requests","Lower Churn"],tools:["Claude","Intercom","Notion","Zapier"]},
+ {n:11,title:"營運管理",tag:"Operations",goal:"用 AI 處理文件、會議、招募、財務與管理節奏。",
+ tasks:["SOP 與文件","Meeting Summary","Hiring","Finance / Investor Updates"],
+ outputs:["Operating Rhythm","SOP Library","Weekly Review","Management Reports"],tools:["Notion AI","Obsidian","Zapier","n8n"]},
+ {n:12,title:"規模化至 $100K MRR",tag:"Scale",goal:"以關鍵指標與系統化營運推動可預測成長。",
+ tasks:["CAC / LTV 管理","NRR 與 Churn","Activation","MRR Growth"],
+ outputs:["Growth Dashboard","Unit Economics","Scale Plan","Hiring / Automation Plan"],tools:["BI Dashboard","PostHog","CRM","Finance Stack"]}
+];
+
+const toolGroups = [
+ {cat:"Research",tools:["Claude","ChatGPT","Perplexity"],color:"var(--cyan)"},
+ {cat:"Design",tools:["Figma AI","v0","Lovable"],color:"var(--purple)"},
+ {cat:"Coding",tools:["Claude Code","GPT-5","Cursor"],color:"var(--orange)"},
+ {cat:"Backend",tools:["Supabase","PostgreSQL","Vercel"],color:"var(--green)"},
+ {cat:"Payments",tools:["Stripe"],color:"var(--yellow)"},
+ {cat:"Analytics",tools:["PostHog","Mixpanel","Clarity","Google Analytics"],color:"var(--blue)"},
+ {cat:"Marketing",tools:["Claude","Midjourney","Canva AI","ElevenLabs","CapCut"],color:"var(--purple)"},
+ {cat:"Sales",tools:["Apollo","Clay","Instantly"],color:"var(--cyan)"},
+ {cat:"Automation",tools:["n8n","Make","Zapier"],color:"var(--orange)"},
+ {cat:"Docs",tools:["Notion","Obsidian"],color:"var(--green)"}
+];
+
+const growth = [
+ {range:"$0–1K MRR",name:"驗證痛點",w:"18%",text:"訪談、假設驗證、手動交付。目標不是擴張，而是確認誰願意為哪個問題付費。"},
+ {range:"$1K–10K",name:"達成 PMF",w:"36%",text:"快速迭代產品，密切追蹤留存與使用者回饋，找到可被重複描述的核心價值。"},
+ {range:"$10K–30K",name:"建立獲客系統",w:"56%",text:"把內容、外銷、合作夥伴及銷售流程標準化，形成可重複的成長引擎。"},
+ {range:"$30K–60K",name:"營運自動化",w:"76%",text:"補上營運角色、SOP、儀表板與自動化，提升單位經濟與交付穩定度。"},
+ {range:"$60K–100K",name:"擴張留存與營收",w:"100%",text:"聚焦 NRR、推薦、企業方案、預測式銷售與組織能力，降低成長對創辦人的依賴。"}
+];
+
+const stageList = document.getElementById("stageList");
+const stageDetail = document.getElementById("stageDetail");
+function renderStage(i){
+  document.querySelectorAll(".stage-btn").forEach((b,idx)=>b.classList.toggle("active",idx===i));
+  const s=stages[i];
+  stageDetail.innerHTML=`<div class="detail-top"><div><span class="badge">${s.tag}</span><h3>${s.n}. ${s.title}</h3><p>${s.goal}</p></div><div class="icon">${String(s.n).padStart(2,"0")}</div></div>
+  <div class="detail-grid"><div class="mini"><h4>核心工作</h4><ul>${s.tasks.map(x=>`<li>${x}</li>`).join("")}</ul></div>
+  <div class="mini"><h4>階段產出</h4><ul>${s.outputs.map(x=>`<li>${x}</li>`).join("")}</ul></div>
+  <div class="mini" style="grid-column:1/-1"><h4>建議工具</h4><div>${s.tools.map(x=>`<span class="badge" style="margin:4px">${x}</span>`).join("")}</div></div></div>`;
+}
+stages.forEach((s,i)=>{
+ const b=document.createElement("button");b.type="button";b.className="stage-btn";
+ b.innerHTML=`<strong>${s.n}</strong><span>${s.title}</span>`;b.addEventListener("click",()=>renderStage(i));stageList.appendChild(b);
+});
+renderStage(0);
+
+const toolFilter=document.getElementById("toolFilter"),toolGrid=document.getElementById("toolGrid");
+["全部",...toolGroups.map(x=>x.cat)].forEach((cat,i)=>{
+ const b=document.createElement("button");b.type="button";b.className="chip"+(i===0?" active":"");b.textContent=cat;
+ b.addEventListener("click",()=>{document.querySelectorAll(".chip").forEach(x=>x.classList.remove("active"));b.classList.add("active");renderTools(cat)});
+ toolFilter.appendChild(b);
+});
+function renderTools(filter){
+ toolGrid.innerHTML="";
+ toolGroups.filter(g=>filter==="全部"||g.cat===filter).forEach(g=>{
+  const el=document.createElement("article");el.className="card tool-card";el.style.setProperty("--accent",g.color);
+  el.innerHTML=`<div class="category" style="color:${g.color}">${g.cat}</div><h3>${g.cat}</h3><ul>${g.tools.map(t=>`<li>${t}</li>`).join("")}</ul>`;
+  toolGrid.appendChild(el);
+ });
+}
+renderTools("全部");
+
+const growthGrid=document.getElementById("growthGrid"),insight=document.getElementById("growthInsight");
+growth.forEach((g,i)=>{
+ const el=document.createElement("article");el.className="card growth-card"+(i===0?" active":"");el.style.setProperty("--accent","var(--orange)");
+ el.innerHTML=`<div class="range">${g.range}</div><h3>${g.name}</h3><div class="progress"><span style="--w:${g.w}"></span></div><p>${g.text}</p>`;
+ el.addEventListener("click",()=>{document.querySelectorAll(".growth-card").forEach(x=>x.classList.remove("active"));el.classList.add("active");insight.innerHTML=`<strong>${g.range}｜${g.name}：</strong>${g.text}`});
+ growthGrid.appendChild(el);
+});
+
+const navLinks=[...document.querySelectorAll(".nav-links a")];
+const sections=[...document.querySelectorAll("main section")];
+window.addEventListener("scroll",()=>{
+ let current=sections[0].id;
+ sections.forEach(s=>{if(window.scrollY>=s.offsetTop-140)current=s.id});
+ navLinks.forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+current));
+});
+</script>
+</body>
+</html>
